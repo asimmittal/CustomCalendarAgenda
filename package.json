@@ -1,0 +1,23 @@
+{
+  "name": "custom-calendar-agenda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asimmittal/CustomCalendarAgenda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asimmittal/CustomCalendarAgenda/issues"
+  },
+  "homepage": "https://github.com/asimmittal/CustomCalendarAgenda#readme",
+  "devDependencies": {
+    "interfake": "^1.19.0",
+    "portastic": "^1.0.1"
+  }
+}
