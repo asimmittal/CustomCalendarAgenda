@@ -28,7 +28,7 @@ $(document).ready(function () {
         eventLimit: true, // allow "more" link when too many events        
         events: [
 				{
-					title: 'All Day Event\nConference Room 5',
+					title: 'All Day Event\n(Conference Room 5)',
 					start: '2017-05-01',                    
 				},
 				{
