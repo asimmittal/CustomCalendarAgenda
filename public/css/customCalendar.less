@@ -1,3 +1,116 @@
+@deep-blue: #1E55AD;
+@light-blue: #CCEBFF;
+@min-width-phone: 320px;
+@max-width-phone: 500px;
+
 #calendar{
     font-family: Avenir, Arial, Helvetica, sans-serif;
+    
+    .fc-button{
+        border-radius: 0;
+        text-shadow: none;
+        font-size: 14px;
+        background-image: none;
+        border:0;
+        text-shadow: none;
+        min-height:40px;
+        outline: none;
+        background: @light-blue;
+        color: black;
+        text-transform: capitalize;
+        &:hover{
+            background: @deep-blue;
+            color:white;
+        }
+    }
+
+    .fc-next-button{
+        margin-left:2px !important;
+    }
+
+    .fc-today-button{
+        width: 85px;        
+    }
+    
+    .fc-right{
+
+        .fc-listWeek-button{
+            outline: none;
+        }
+
+        .fc-state-active{
+            background: @deep-blue !important;
+            color: white !important;        
+            outline: none !important;
+            box-shadow: none;
+        }
+
+        .fc-button{
+            margin-left:2px;
+            background: @light-blue;
+            color: black;
+            width:85px;
+            outline: none;
+        }
+    }
+
+    .fc-scroller{
+        height: initial !important;
+    }
+
+    .fc-center h2{
+        font-size:18px;
+        font-weight: lighter;
+        padding-top:3px;
+    }
+
+    .fc-widget-header{
+        background: @deep-blue;
+        color: white;
+    }
+
+    .fc-list-item-marker{
+        display:none;
+    }
+
+    .fc-list-table td{
+        padding: 10px 14px !important;
+        border-color:white !important;
+        border-bottom:2px solid white !important;
+    }
+
+    .fc-list-item{
+        border:0;
+        background: @light-blue;
+        cursor: pointer;
+    }
+
+    .fc-list-item td{
+        padding: 20px 14px !important;
+    }
+
+    .fc-unthemed td, .fc-list-view{
+        border-color:white !important;
+    }        
+
+    .fc-list-empty{
+        padding:100px;
+    }
+
+    .fc-state-disabled{
+        background: lightgray !important;
+    }
+
+    @media screen and (min-width: @min-width-phone) and (max-width:@max-width-phone){
+        
+        .fc-center h2{
+            font-size:14px;
+            padding-top:10px;
+        }
+
+        .fc-today-button{
+            width:65px !important;
+            font-size:14px !important;
+        }
+    }
 }
