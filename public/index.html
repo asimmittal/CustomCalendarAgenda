@@ -8,7 +8,28 @@
         <link rel="stylesheet" href="../css/customCalendar.css">        
     </head>
     <body>
-        <div id="calendar"></div>
+        <div id="calendar">
+            
+        </div>
     </body>
     <script src="agenda.js"></script>
+
+    <!-- main -->
+    <script>
+        console.log("--- main ---")
+        $(document).ready(function(){
+
+            //create the ere calendar object
+            var ereCal = new EreCalendar("calendar");
+
+            //turn on its loader
+            ereCal.showLoader();
+
+            //fetch the events, add them, hide the loader
+            $.get("/events",function(resp){
+                ereCal.addEvents(resp.events);
+                ereCal.hideLoader();
+            });
+        });
+    </script>
 </html>
