@@ -20,27 +20,33 @@
     <script>
 
         /**
-         * resp = {
+         *  The server response for event data should be a JSON object that looks like this:
+         *      {
                     "events": [
                         {
                             "title": "Sample Title\n(Conference room)",
                             "start": "2000-01-01T18:25:00.000Z",
-                            "end": "2000-01-01T21:40:00.000Z"
-                        },
-                        {
-                            "title": "Sample Title\n(Conference room)",
-                            "start": "2000-01-02T18:25:00.000Z",
-                            "end": "2000-01-02T21:40:00.000Z"
-                        }                
+                            "end": "2000-01-01T21:40:00.000Z",
+                            "meta": "http://google.com" 
+                        }               
                     ]
                 }
-        */
 
-        console.log("--- main ---")
+            Note: Each event object (in the 'events' list) can contain some meta data ('meta'). 
+            This can be the url to which the event points or something else. You will be given
+            a callback to a click event that will allow you to access the data in 'meta'.
+
+            Look at the code below
+        */
         $(document).ready(function(){
 
-            //create the ere calendar object
-            var ereCal = new EreCalendar("calendar");
+            //this is the callback for when an event is clicked in the agenda
+            var handleClick = function(event){
+                alert("You will now be taken to " + event.meta);
+            }
+
+            //create the ere calendar object, pass it the callback 
+            var ereCal = new EreCalendar("calendar", handleClick);
 
             //turn on its loader
             ereCal.showLoader();

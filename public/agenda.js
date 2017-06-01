@@ -1,8 +1,9 @@
-var EreCalendar = function (elemId, urlLoaderImage) {
+var EreCalendar = function (elemId, callback, urlLoaderImage) {
 
     //initialize the calendar
     if (!document.getElementById(elemId)) throw "Cannot render calendar to invalid DOM element";
     if (urlLoaderImage && typeof(urlLoaderImage) != typeof('')) throw "URLimage must be a string";
+    if (!callback || typeof(callback) != "function") throw "Callback must be a function";
 
     var handle = '#' + elemId;    
     var overlay;
@@ -18,6 +19,7 @@ var EreCalendar = function (elemId, urlLoaderImage) {
         navLinks: true, // can click day/week names to navigate views
         editable: true,
         eventLimit: true, // allow "more" link when too many events        
+        eventClick: callback,
         events: []
     });
 

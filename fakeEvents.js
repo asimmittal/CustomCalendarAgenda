@@ -23,6 +23,7 @@ var FakeEventGen = function () {
                 title: 'Sample Title\n(Conference room)',
                 start: _startTime,
                 end: _endTime,
+                meta: "http://google.com"
             });
         }
 
